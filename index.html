@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <title>Program Jquery Menambah Nilai Dengan Tombol</title>
+  </head>
+
+  <body class="bg-dark">
+    <div class="d-flex mt-4 m-auto" id="container" style="width: 500px; height: 500px">
+      <div class="text-center m-auto">
+        <h1 class="text-warning"></h1>
+        <div class="d-flex flex-column">
+          <button type="button" class="btn btn-danger" id="btn-1">Munculkan Counter!</button>
+          <button type="button" class="mt-2 btn btn-info" id="btn-2">Reset Counter!</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+        let value = 1;
+        const reset = 0;
+        $("#btn-1").on("click", function () {
+          $("h1").html(value++);
+        });
+        $("#btn-2").on("click", function () {
+          $("h1").html(reset);
+          value = 1;
+        });
+        $("#container").mouseenter(function () {
+          $(this).css("background-color", "white");
+          $("#btn-1").removeClass("btn-secondary");
+          $("#btn-1").addClass("btn-dark");
+        });
+        $("#container").mouseleave(function () {
+          $("#btn-1").removeClass("btn-dark");
+          $("#btn-1").addClass("btn-secondary");
+        });
+      });
+    </script>
+  </body>
+</html>
